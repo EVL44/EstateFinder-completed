@@ -1,0 +1,243 @@
+@import "../../responsive.scss";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+.commentsPage {
+  display: flex;
+  height: 100%;
+  padding: 20px;
+  font-family: 'Roboto', sans-serif;
+
+  @include md {
+    flex-direction: column;
+    overflow: scroll; /* Enable scrolling for smaller screens */
+  }
+
+  .postImageContainer {
+    flex: 1.5;
+    margin-right: 40px;
+
+    .user {
+      display: flex;
+      align-items: center; /* Align items vertically */
+      gap: 10px; /* Add some space between the text and the avatar */
+      margin-top: 20px;
+
+      img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+
+      p {
+        margin: 0; /* Remove default margin */
+      }
+    }
+
+    @include md {
+      margin-right: 0;
+      margin-bottom: 20px;
+    }
+  }
+
+  .commentsSection {
+    flex: 2;
+    background: linear-gradient(to bottom, #ffffff, #ffffff); /* Calming gradient from blue to green */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+
+    @include md {
+      flex: none;
+      height: max-content;
+    }
+
+    .wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      .title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        h1 {
+          font-weight: 300;
+        }
+      }
+
+      .commentForm {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 20px;
+        
+
+        textarea {
+          width: 100%;
+          height: 100px;
+          padding: 10px;
+          border-radius: 5px;
+          border: 1px solid #b0c7d1;
+          resize: none;
+          font-family: inherit;
+          
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
+        }
+
+        button {
+          align-self: flex-end;
+          padding: 10px 20px;
+          background-color: #fece51; /* Soft green */
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          font-weight: bold;
+          font-family: inherit;
+          transition: background-color 0.3s ease;
+
+          
+        }
+      }
+
+      .commentsList {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        .comment {
+          display: flex;
+          align-items: flex-start;
+          gap: 10px;
+          background-color: #ffffff; /* Light teal */
+          border-radius: 10px;
+          padding: 15px;
+          box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+          transition: box-shadow 0.3s ease;
+          box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+          
+
+          img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+          }
+
+          .commentDetails {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+
+            .username {
+              font-weight: bold;
+              font-size: 16px;
+            }
+
+            .timestamp {
+              font-size: 12px;
+              color: #000000; /* Soft gray */
+            }
+
+            p {
+              margin: 0;
+            }
+
+            .actions {
+              display: flex;
+              gap: 10px;
+              margin-top: 10px;
+
+              button {
+                display: flex;
+                align-items: center;
+                background: none;
+                border: none;
+                cursor: pointer;
+                font-size: 14px;
+                color: #ff0000; /* Darker gray */
+                transition: color 0.3s ease;
+
+                &:hover {
+                  color: #3a3a3a; /* Even darker gray */
+                }
+
+                svg {
+                  margin-right: 5px;
+                }
+
+                // Conditional styling for the like button when the comment is liked
+                &[style*="color: blue"] {
+                  color: blue;
+                }
+              }
+            }
+
+            .replies {
+              margin-top: 10px;
+
+              .reply {
+                
+                display: flex;
+                gap: 10px;
+                background-color: #f3e8a3; /* Soft blue-green */
+                border-radius: 8px;
+                padding: 8px;
+                width: 400px;
+                margin-top: 20px;
+                font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+                box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Add box shadow */
+                img {
+                  width: 40px;
+                  height: 40px;
+                  border-radius: 50%;
+                  object-fit: cover;
+                }
+
+                .replyDetails {
+                  display: flex;
+                  flex-direction: column;
+                  gap: 3px;
+                  button{
+                    margin-left: 240px;
+                    width: 90px;
+                  }
+                }
+              }
+            }
+
+            .replyInput {
+              display: flex;
+              gap: 10px;
+              margin-top: 10px;
+
+              input {
+                flex: 1;
+                padding: 8px;
+                border-radius: 5px;
+                border: 1px solid #b0c7d1;
+                box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+                width: 260px;
+              }
+
+              button {
+                padding: 8px 12px;
+                background-color: #fece51; /* Soft green */
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                font-weight: bold;
+                transition: background-color 0.3s ease;
+
+                
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

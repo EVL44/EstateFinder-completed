@@ -1,0 +1,135 @@
+@import "../../responsive.scss";
+
+.profileUser {
+  display: flex;
+  height: 100%;
+
+  @include md {
+    flex-direction: column;
+    overflow: scroll;
+  }
+
+  .details {
+    flex: 3;
+    overflow-y: scroll;
+    padding-bottom: 50px;
+
+    @include md {
+      flex: none;
+      height: max-content;
+    }
+
+    .wrapper {
+      padding-right: 50px;
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+
+      .title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        h1 {
+          font-weight: bold;
+          font-size: 32px;
+          color: #333;
+        }
+
+        button {
+          padding: 12px 24px;
+          background-color: #fece51;
+          cursor: pointer;
+          border: none;
+          border-radius: 5px;
+          color: #fff;
+          font-weight: bold;
+          font-size: 18px;
+          transition: background-color 0.3s ease;
+
+          &:hover {
+            background-color: #ffbf00;
+          }
+        }
+      }
+
+      .info {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        span {
+          display: flex;
+          align-items: center;
+          gap: 20px;
+          font-size: 18px;
+          color: #555;
+        }
+
+        button {
+          width: 150px;
+          background-color: teal;
+          border: none;
+          color: white;
+          padding: 12px 24px;
+          cursor: pointer;
+          border-radius: 5px;
+          font-weight: bold;
+          font-size: 16px;
+          transition: background-color 0.3s ease;
+
+          &:hover {
+            background-color: #00796b;
+          }
+        }
+
+        img {
+          width: 100px;
+          height: 100px;
+          border-radius: 50%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+
+  .chatContainer {
+    flex: 2;
+    background-color: #fcf5f3;
+    height: 100%;
+
+    @include md {
+      flex: none;
+      height: max-content;
+    }
+
+    .wrapper {
+      padding: 20px;
+      height: 100%;
+    }
+  }
+}
+
+.rateButton {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.rateButton:hover {
+  background-color: #45a049;
+}
+
+.ratingContainer {
+  margin-top: 10px;
+}
+
+.rater {
+  font-size: 30px;
+  color: yellow;
+}

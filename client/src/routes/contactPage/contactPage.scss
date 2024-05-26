@@ -1,0 +1,78 @@
+@import "../../responsive.scss";
+
+.contactPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px;
+  
+    .textContainer {
+      margin-bottom: 50px;
+      text-align: center;
+  
+      .wrapper {
+        max-width: 600px;
+        margin: 0 auto;
+      }
+  
+      .title {
+        font-size: 3.5rem;
+        color: #333;
+
+        @include lg {
+          font-size: 2.5rem;
+        }
+
+        @include md {
+          font-size: 2rem;
+        }
+
+        @include sm {
+          font-size: 1.8rem;
+        }
+      }
+    }
+  
+    .formContainer {
+      width: 100%;
+      max-width: 600px;
+  
+      form {
+        display: flex;
+        flex-direction: column;
+  
+        input,
+        textarea {
+          margin-bottom: 20px;
+          padding: 10px;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          font-size: 16px;
+          width: 100%;
+          box-sizing: border-box;
+          transition: border-color 0.3s ease;
+        }
+  
+        textarea {
+          height: 150px;
+          resize: vertical;
+        }
+  
+        button {
+          padding: 10px 20px;
+          background-color: #f8c33d;
+          color: #fff;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          font-size: 18px;
+          transition: background-color 0.3s ease;
+  
+          &:hover {
+            background-color: #e0a500;
+          }
+        }
+      }
+    }
+  }
+  

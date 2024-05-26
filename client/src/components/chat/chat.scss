@@ -1,0 +1,212 @@
+.chat {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  .messages {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow-y: scroll;
+
+    h1 {
+      font-weight: 300;
+    }
+
+    .message {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      cursor: pointer;
+      position: relative; 
+
+      img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+      .deletechat {
+        position: absolute; 
+        top: 50%; 
+        right: 50px; 
+        transform: translateY(-50%); 
+        width: 30px;
+        height: 30px;
+        margin-right: 10px;
+      }
+    
+      .callicon {
+        position: absolute; 
+        top: 50%; 
+        right: 10px; 
+        transform: translateY(-50%); 
+      }
+
+      span {
+        font-weight: bold;
+      }
+    }
+    .phoneIcon {
+      color: #ff0000;
+      font-size: 24px; 
+    }
+  }
+
+  .chatBox {
+    flex: 1;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .top {
+      background-color: #f7c14b85;
+      padding: 20px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .user {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        img {
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+          object-fit: cover;
+        }
+      }
+
+      .close {
+        cursor: pointer;
+        padding: 5px 10px;
+        background-color: #f0545429;
+        /* Light red background color */
+        border: none;
+        border-radius: 5px;
+        color: #f05454;
+        /* Red color for text */
+        font-weight: bold;
+        /* Add some margin to the right */
+        margin-right: 10px;
+      }
+
+      .deleteButton {
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        margin-right: -210px;
+        transition: all 0.3s ease;
+
+      }
+
+      .deleteButton:hover {
+        transform: scale(1.1);
+
+      }
+
+      .deleteButton img {
+        width: 25px;
+        height: 25px;
+
+      }
+    }
+
+    .center {
+      height: 350px;
+      overflow: scroll;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      .chatMessage {
+        width: 50%;
+
+        &.own {
+          align-self: flex-end;
+          text-align: right;
+        }
+
+        span {
+          font-size: 12px;
+          background-color: #f7c14b39;
+          padding: 2px;
+          border-radius: 5px;
+        }
+      }
+    }
+
+    .bottom {
+      border-top: 2px solid #f7c14b85;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      textarea {
+        flex: 3;
+        height: 100%;
+        border: none;
+        padding: 20px;
+      }
+
+      button {
+        flex: 1;
+        background-color: #f7c14b85;
+        height: 100%;
+        border: none;
+        cursor: pointer;
+      }
+
+    }
+  }
+  .avatarWrapper {
+    position: relative; 
+    cursor: pointer;
+  }
+  
+  .dropdownMenu {
+    position: absolute;
+    top: 100%; 
+    left: 0; 
+    background-color: #f9f9f9;
+    min-width: 150px; 
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 5px; 
+    padding: 10px; 
+    display: flex; 
+    flex-direction: column; 
+  }
+  
+  .dropdownMenu button {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: flex;
+    align-items: center; 
+    border: none; 
+    background: none;
+    cursor: pointer;
+    width: 100%; 
+    margin: 5px 0;
+  }
+  
+  .deleteIcon {
+    margin-right: 8px; 
+  }
+
+  
+  
+  
+}
